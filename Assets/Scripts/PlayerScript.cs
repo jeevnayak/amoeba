@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	public Vector2 speed = new Vector2(25, 25);
+	public Vector2 speed = new Vector2(5, 5);
 
 	private Vector2 movement;
 	
@@ -14,6 +15,6 @@ public class PlayerScript : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		rigidbody2D.velocity = movement;
+		rigidbody2D.AddForce(movement);
 	}
 }
