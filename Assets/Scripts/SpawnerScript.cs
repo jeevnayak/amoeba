@@ -20,7 +20,7 @@ public class SpawnerScript : MonoBehaviour {
 	private float spawnCooldown;
 	
 	void Start() {
-		spawnCooldown = 0f;
+		spawnCooldown = Random.Range (0f, spawnRate);
 	}
 	
 	// Update is called once per frame
