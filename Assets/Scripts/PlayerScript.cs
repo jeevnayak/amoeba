@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	public float defaultSpeed = 5f;
+	public float minSpeed = 1f;
 	public int numPreyEaten = 0;
 
 	private Vector2 movement;
@@ -12,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
 		float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis("Vertical");
 
-		float speed = defaultSpeed - numPreyEaten * 0.5f;
+		float speed = defaultSpeed - (defaultSpeed - minSpeed) * (numPreyEaten / (numPreyEaten + 10f));
 		movement = new Vector2(speed * inputX, speed * inputY);
 	}
 	
