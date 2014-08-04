@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour {
 	public float defaultSpeed = 5f;
 	public float minSpeed = 1f;
 	public int numPreyEaten = 0;
+	private float startSize;
 
 	private Vector2 movement;
 
@@ -13,6 +14,7 @@ public class PlayerScript : MonoBehaviour {
 	void Start () {
 		//jumpCooldown = 0f;
 		transform.parent.gameObject.GetComponent<GameOverScript> ().enabled = false;
+		startSize = transform.localScale.x;
 	}
 
 	void Update() {
@@ -49,7 +51,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void UpdateSize() {
-		float scale = 2f + numPreyEaten * 0.1f;
+		float scale = startSize + numPreyEaten * 0.1f;
 		rigidbody2D.transform.localScale = new Vector3(scale, scale, 1);
 	}
 
