@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PredatorScript : MonoBehaviour {
 
-	public Vector2 speed = new Vector2(5, 5);
+	public float speed = 5f;
 
 	private Vector2 movement;
 	
@@ -23,7 +23,11 @@ public class PredatorScript : MonoBehaviour {
 		direction.x = direction.x / normalizeFactor;
 		direction.y = direction.y / normalizeFactor;
 
-		movement = new Vector2(speed.x * direction.x, speed.y * direction.y);
+		movement = new Vector2(speed * direction.x, speed * direction.y);
+
+		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		Debug.Log (angle);
+		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 	
 	void FixedUpdate() {
