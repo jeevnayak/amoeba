@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{4FD07DB4-8D97-FAE3-E8F9-1C25110A0019}") = "amoeba", "Assembly-CSharp.csproj", "{815F8A47-8080-9A10-7DF6-0148D1BE72A5}"
+Project("{8928573C-3DF0-2BEB-1F39-314F0976698A}") = "Amoeba", "Assembly-CSharp.csproj", "{5D9E3401-6CAD-FA9E-CE3A-C430E2D13838}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{815F8A47-8080-9A10-7DF6-0148D1BE72A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{815F8A47-8080-9A10-7DF6-0148D1BE72A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{815F8A47-8080-9A10-7DF6-0148D1BE72A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{815F8A47-8080-9A10-7DF6-0148D1BE72A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9E3401-6CAD-FA9E-CE3A-C430E2D13838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9E3401-6CAD-FA9E-CE3A-C430E2D13838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9E3401-6CAD-FA9E-CE3A-C430E2D13838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9E3401-6CAD-FA9E-CE3A-C430E2D13838}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-								GlobalSection(MonoDevelopProperties) = preSolution
+											GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
