@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PredatorScript : MonoBehaviour {
 
-	public float speed = 5f;
+	public float speed = 1f;
 
 	private Vector2 movement;
 	
