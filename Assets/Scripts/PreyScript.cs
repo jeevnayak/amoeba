@@ -8,9 +8,6 @@ public class PreyScript : MonoBehaviour {
 	private Vector2 movement;
 	
 	void Update() {
-		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis("Vertical");
-		
 		GameObject playerObject = GameObject.Find("Player");
 		Vector2 playerPos = playerObject.transform.position;
 		
