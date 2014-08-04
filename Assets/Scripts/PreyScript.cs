@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PreyScript : MonoBehaviour {
 
-	public Vector2 speed = new Vector2(1, 1);
+	public float speed = 1f;
 	
 	private Vector2 movement;
 	
@@ -23,7 +23,7 @@ public class PreyScript : MonoBehaviour {
 		direction.x = direction.x / normalizeFactor;
 		direction.y = direction.y / normalizeFactor;
 		
-		movement = new Vector2(speed.x * direction.x, speed.y * direction.y);
+		movement = new Vector2(speed * direction.x, speed * direction.y);
 	}
 	
 	void FixedUpdate() {
