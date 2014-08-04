@@ -12,22 +12,24 @@ public class PredatorScript : MonoBehaviour {
 		float inputY = Input.GetAxis("Vertical");
 
 		GameObject playerObject = GameObject.Find("Player");
-		Vector2 playerPos = playerObject.transform.position;
+		if (playerObject != null) {
+			Vector2 playerPos = playerObject.transform.position;
 
-		Vector2 currentPos = transform.position;
-		Vector2 direction = playerPos - currentPos;
+			Vector2 currentPos = transform.position;
+			Vector2 direction = playerPos - currentPos;
 
-		float normalizeFactor = Mathf.Sqrt ((direction.x * direction.x) + 
-		                                    (direction.y * direction.y));
+			float normalizeFactor = Mathf.Sqrt ((direction.x * direction.x) + 
+					(direction.y * direction.y));
 
-		direction.x = direction.x / normalizeFactor;
-		direction.y = direction.y / normalizeFactor;
+			direction.x = direction.x / normalizeFactor;
+			direction.y = direction.y / normalizeFactor;
 
-		movement = new Vector2(speed * direction.x, speed * direction.y);
+			movement = new Vector2 (speed * direction.x, speed * direction.y);
 
-		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		Debug.Log (angle);
-		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+			float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+			Debug.Log (angle);
+			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+		}
 	}
 	
 	void FixedUpdate() {

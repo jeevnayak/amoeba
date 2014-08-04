@@ -12,18 +12,21 @@ public class PreyScript : MonoBehaviour {
 		float inputY = Input.GetAxis("Vertical");
 		
 		GameObject playerObject = GameObject.Find("Player");
-		Vector2 playerPos = playerObject.transform.position;
+
+		if (playerObject != null) {
+			Vector2 playerPos = playerObject.transform.position;
 		
-		Vector2 currentPos = transform.position;
-		Vector2 direction = currentPos - playerPos;
+			Vector2 currentPos = transform.position;
+			Vector2 direction = currentPos - playerPos;
 		
-		float normalizeFactor = Mathf.Sqrt ((direction.x * direction.x) + 
-		                                    (direction.y * direction.y));
+			float normalizeFactor = Mathf.Sqrt ((direction.x * direction.x) + 
+					(direction.y * direction.y));
 		
-		direction.x = direction.x / normalizeFactor;
-		direction.y = direction.y / normalizeFactor;
+			direction.x = direction.x / normalizeFactor;
+			direction.y = direction.y / normalizeFactor;
 		
-		movement = new Vector2(speed * direction.x, speed * direction.y);
+			movement = new Vector2 (speed * direction.x, speed * direction.y);
+		}
 	}
 	
 	void FixedUpdate() {

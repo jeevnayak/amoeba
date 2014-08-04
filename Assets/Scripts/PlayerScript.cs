@@ -7,7 +7,13 @@ public class PlayerScript : MonoBehaviour {
 	public int numPreyEaten = 0;
 
 	private Vector2 movement;
-	
+
+	// Use this for initialization
+	void Start () {
+		//jumpCooldown = 0f;
+		transform.parent.gameObject.GetComponent<GameOverScript> ().enabled = false;
+	}
+
 	void Update() {
 		float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis("Vertical");
@@ -26,6 +32,13 @@ public class PlayerScript : MonoBehaviour {
 		if (prey != null) {
 			EatPrey(prey);
 		}
+
+		// Collision with enemy
+		PredatorScript enemy = collision.gameObject.GetComponent<PredatorScript>();
+		if (enemy != null) {
+			// Dead!
+			Destroy(gameObject);
+		}
 	}
 
 	void EatPrey(PreyScript prey) {
@@ -38,4 +51,13 @@ public class PlayerScript : MonoBehaviour {
 		float scale = 2f + numPreyEaten * 0.1f;
 		rigidbody2D.transform.localScale = new Vector3(scale, scale, 1);
 	}
+
+	void OnDestroy() {
+		// Game Over.
+				
+		// Add the script to the parent because the current game
+		// object is likely going to be destroyed immediately.
+		transform.parent.gameObject.GetComponent<GameOverScript> ().enabled = true;
+	}
+
 }
